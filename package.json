@@ -1,0 +1,6 @@
+{
+  "name": "tiendita-app",
+  "scripts": {
+    "dev": "nuxt"
+  }
+}
