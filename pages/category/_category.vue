@@ -1,7 +1,7 @@
 <template>
   <section :key="category.id" class="container">
     <div>
-      <h1 class="title">{{ category.title }}</h1>
+      <!-- <h1 class="title">{{ category.title }}</h1> -->
       <div class="description">{{ category.description }}</div>
       <ProductList v-if="category.products" :products="category.products" />
       <ul v-if="category.categories" class="sub-categories">
@@ -56,6 +56,9 @@ export default {
 </script>
 
 <style scoped>
+section {
+  /* background: url(/tyler-nix-582593-unsplash.jpg) no-repeat center center scroll; */
+}
 .sub-categories {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
