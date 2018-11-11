@@ -2,9 +2,9 @@
   <section>
     <div>
       <h1 class="title">
-        <a href="/"> <AppLogo /> </a>
+        Agusto en La Saladita
       </h1>
-      <h2 class="subtitle">Una tienda en linea simple</h2>
+      <h2 class="subtitle">Portal de pagos en linea</h2>
     </div>
   </section>
 </template>

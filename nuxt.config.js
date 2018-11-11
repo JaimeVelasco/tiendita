@@ -53,9 +53,18 @@ export default {
    */
   css: ["~/css/global.css"],
   /*
-   ** dev configuration
+   ** Dev configuration
    */
   dev: (process.env.NODE_ENV !== 'production'),
+  /*
+   ** Vue configuration
+   */
+   vue: {
+    config: {
+     productionTip: true,
+     devtools: true
+    }
+  },
   /*
    ** Build configuration
    */

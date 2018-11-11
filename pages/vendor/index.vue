@@ -1,7 +1,7 @@
 <template>
   <section>
     <div>
-      <h1 class="title">Vendors</h1>
+      <h1 class="title">Acerca de Spy Surf</h1>
       <ul class="vendors">
         <li
           v-for="vendor in this.$store.state.globalData.vendors"
@@ -38,6 +38,9 @@ export default {
 </script>
 
 <style scoped>
+.title {
+  text-align: center;
+}
 .vendors {
   display: grid;
   margin: 0;
