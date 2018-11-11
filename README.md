@@ -1,5 +1,7 @@
 # Simple store front for Spy Surf lessons and rentals
 
+https://spysurfchecheche.com/
+
 A frontend example in Vue.js and Nuxt.js for the Sanity.io e-commerce schema based on https://github.com/sanity-io/example-ecommerce-snipcart-vue
 
 ## Quickstart on local
