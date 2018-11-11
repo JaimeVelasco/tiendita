@@ -10,4 +10,8 @@
   width: auto;
   height: 1em;
 }
+p {
+  font-size: 0.8rem;
+  text-align: center;
+}
 </style>
