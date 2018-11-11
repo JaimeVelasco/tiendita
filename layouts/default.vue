@@ -4,15 +4,14 @@
       <router-link :to="'/'" class="logo"> <AppLogo /> </router-link>
       <nav>
         <ul>
-          <li><router-link :to="'/'">Home</router-link></li>
-          <li><router-link :to="'/category'">Categories</router-link></li>
-          <li><router-link :to="'/vendor'">Vendors</router-link></li>
+          <li><router-link :to="'/category/servicios'">Servicios</router-link></li>
+          <li><router-link :to="'/vendor'">Nosotros</router-link></li>
         </ul>
       </nav>
       <div ref="cart" class="cart">
         <a href="#" class="snipcart-checkout">
           <div class="snipcart-summary">
-            🛒 <span class="snipcart-total-items" /> items
+            🛒 <span class="snipcart-total-items" /> Cosas en carrito
             <span class="snipcart-total-price" />
           </div>
         </a>
@@ -61,7 +60,7 @@ export default {
     AppLogo
   },
   mounted() {
-    console.log("currentRoute", this.$router.currentRoute)
+    console.warn("currentRoute", this.$router.currentRoute)
     if (!window.Snipcart) {
       throw new Error(
         "Snipcart not found. Make sure snipcart is loaded on page. For more info, see https://docs.snipcart.com/getting-started/installation"
@@ -85,11 +84,11 @@ export default {
   .root {
     display: grid;
     grid-gap: 1em;
-    grid-template-columns: 10em auto;
+    grid-template-columns: 0.5em auto;
     grid-template-rows: 5em minmax(calc(100vh - 12rem), auto) 5em;
     grid-template-areas:
       "header   header"
-      "content  content"
+      "sidebar  content"
       "footer   footer";
   }
 }
