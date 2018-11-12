@@ -1,11 +1,18 @@
 <template>
-  <div class="home">
-    <section class="content"><nuxt /></section>
-
-    <div class="footer">Spy Surf Che Che Che en Playa La Saladita, México</div>
-  </div>
+  <v-app>
+    <v-content>
+      <v-container>
+        <div class="home">
+          <section class="content"><nuxt /></section>
+          <div class="footer">
+            Spy Surf Che Che Che en Playa La Saladita, México
+          </div>
+        </div>
+      </v-container>
+    </v-content>
+  </v-app>
 </template>
-
+<!-- 
 <script>
 export default {}
 </script>
@@ -26,6 +33,7 @@ section.content {
   }
 }
 </style>
+ -->
 
 <style>
 html {

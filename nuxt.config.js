@@ -57,7 +57,20 @@ export default {
   /*
    ** Dev configuration
    */
-  dev: true
+  dev: (process.env.NODE_ENV !== 'production'),
+  /*
+   ** Modules configuration
+   */
+
+  modules: [
+    '@nuxtjs/vuetify'
+  ],
+
+  vuetify: {
+    // Vuetify options
+    //  theme: { }
+  },
+
   /*
   /*
    ** Build configuration
