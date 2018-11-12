@@ -30,7 +30,7 @@
               :data-item-id="product._id"
               type="button"
               class="snipcart-add-item"
-              data-item-url="/"
+              data-item-url="$route.fullPath"
             >
               Add to cart
             </button>
@@ -39,10 +39,10 @@
         <div class="body" v-html="bodyHtml" />
       </div>
       <div class="sidebar">
-        <ImageViewer
-          :images="product.defaultProductVariant.images"
-          class="image-viewer"
-        />
+        <div v-for="variant in product.variants" :key="variant.key">
+          {{ variant.title }} {{ formattedVariantPrice(variant.price) }}
+          <ImageViewer :images="variant.images" class="image-viewer" />
+        </div>
       </div>
     </div>
   </section>
@@ -61,11 +61,13 @@ const query = `
   *[_type == "product" && slug.current == $product][0] {
     ...,
     categories[]->,
-    vendor->
+    vendor->,
+    variants->
   }
 `
 
 export default {
+  layout: "store",
   asyncData(context) {
     return sanity
       .fetch(query, context.route.params)
@@ -90,11 +92,18 @@ export default {
       if (!this.product || !this.product.body) {
         return "…"
       }
+      console.warn(this.product.body)
       return blocksToHtml({
         blocks: this.product.body,
         dataset: sanity.clientConfig.dataset,
-        projectId: sanity.clientConfig.projectId
+        projectId: sanity.clientConfig.projectId,
+        imageOptions: { h: 500, fit: "fill" }
       })
+    }
+  },
+  methods: {
+    formattedVariantPrice: function(value) {
+      return numeral(value).format("$0.00")
     }
   }
 }
@@ -103,6 +112,10 @@ export default {
 <style scoped>
 .price {
   line-height: 1.5em;
+}
+
+.sidebar.image-viewer > div > div > img {
+  height: 50px;
 }
 
 @media only screen and (min-width: 500px) {
@@ -134,8 +147,8 @@ export default {
   }
 
   .image-viewer {
-    min-width: 25vw;
-    max-width: 20rem;
+    min-width: 1rem;
+    max-width: 5rem;
   }
 
   .sidebar {
