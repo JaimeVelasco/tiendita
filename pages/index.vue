@@ -1,10 +1,10 @@
 <template>
   <section>
     <div>
-      <h1 class="title">
-        Agusto en La Saladita
-      </h1>
-      <h2 class="subtitle">Portal de pagos en linea</h2>
+      <h1 class="title">Spy Surf Che Che Che</h1>
+      <h2 class="subtitle">Playa La Saladita</h2>
+      <router-link :to="'/category/renta-de-tablas'">lslsls</router-link>
+      <router-link :to="'/category/servicios'">Servicios</router-link>
     </div>
   </section>
 </template>
@@ -13,6 +13,7 @@
 import AppLogo from "~/components/AppLogo"
 
 export default {
+  layout: "landingPage",
   components: {
     AppLogo
   }
@@ -23,6 +24,7 @@ export default {
 section {
   background-size: cover;
   background: url(/checheche.jpg) no-repeat center center fixed;
+  background-size: cover;
 }
 
 .title,
