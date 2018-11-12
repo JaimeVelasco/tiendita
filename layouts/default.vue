@@ -4,7 +4,9 @@
       <router-link :to="'/'" class="logo"> <AppLogo /> </router-link>
       <nav>
         <ul>
-          <li><router-link :to="'/category/servicios'">Servicios</router-link></li>
+          <li>
+            <router-link :to="'/category/servicios'">Servicios</router-link>
+          </li>
           <li><router-link :to="'/vendor'">Nosotros</router-link></li>
         </ul>
       </nav>
@@ -18,8 +20,7 @@
       </div>
     </header>
 
-    <!--
-      <section class="sidebar">
+    <section class="sidebar">
       <ul class="categories">
         <li
           v-for="category in this.$store.state.globalData.categoryTree"
@@ -43,8 +44,7 @@
           </ul>
         </li>
       </ul>
-      </section>
-    -->
+    </section>
 
     <section class="content"><nuxt /></section>
 
@@ -60,7 +60,6 @@ export default {
     AppLogo
   },
   mounted() {
-    console.warn("currentRoute", this.$router.currentRoute)
     if (!window.Snipcart) {
       throw new Error(
         "Snipcart not found. Make sure snipcart is loaded on page. For more info, see https://docs.snipcart.com/getting-started/installation"

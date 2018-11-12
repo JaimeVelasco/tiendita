@@ -1,6 +1,8 @@
 import client from "./sanity.js"
 
 export default {
+
+  globalName: 'nuxt',
   /*
    ** Headers of the page
    */
@@ -55,16 +57,8 @@ export default {
   /*
    ** Dev configuration
    */
-  dev: (process.env.NODE_ENV !== 'production'),
+  dev: true
   /*
-   ** Vue configuration
-   */
-   vue: {
-    config: {
-     productionTip: true,
-     devtools: true
-    }
-  },
   /*
    ** Build configuration
    */
