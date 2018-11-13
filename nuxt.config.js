@@ -68,7 +68,16 @@ export default {
 
   vuetify: {
     // Vuetify options
-    //  theme: { }
+     theme: {
+       primary: "#3D405B",
+       secondary: "#81B29A",
+       accent: "#D5573B",
+       error: "#f44336",
+       warning: "#E07A5F",
+       info: "#F2CC8F",
+       success: "#F4F1DE"
+     }
+
   },
 
   /*

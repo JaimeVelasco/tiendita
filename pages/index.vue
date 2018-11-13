@@ -5,6 +5,24 @@
       <h2 class="subtitle">Playa La Saladita</h2>
       <router-link :to="'/category/renta-de-tablas'">lslsls</router-link>
       <router-link :to="'/category/servicios'">Servicios</router-link>
+      <v-layout align-center justify-center row fill-height>
+        <v-flex xs6>
+          <v-card>
+            <v-card-text class="px-5">
+              <router-link :to="'/category/servicios'"> Servicios </router-link>
+            </v-card-text>
+          </v-card>
+        </v-flex>
+        <v-flex xs6>
+          <v-card>
+            <v-card-text class="px-5">
+              <router-link :to="'/category/renta-de-tablas'">
+                Renta De Tablas
+              </router-link>
+            </v-card-text>
+          </v-card>
+        </v-flex>
+      </v-layout>
     </div>
   </section>
 </template>
@@ -24,7 +42,7 @@ export default {
 section {
   background-size: cover;
   background: url(/checheche.jpg) no-repeat center center fixed;
-  background-size: cover;
+  height: 100vh;
 }
 
 .title,

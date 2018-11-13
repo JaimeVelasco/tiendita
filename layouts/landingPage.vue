@@ -1,39 +1,35 @@
 <template>
-  <v-app>
-    <v-content>
-      <v-container>
-        <div class="home">
-          <section class="content"><nuxt /></section>
-          <div class="footer">
-            Spy Surf Che Che Che en Playa La Saladita, México
-          </div>
-        </div>
-      </v-container>
-    </v-content>
+  <v-app light>
+    <v-layout column wrap fill-height pa-0>
+      <section class="content"><nuxt /></section>
+    </v-layout>
+    <v-footer class="pa-3">
+      Spy Surf Che Che Che en Playa La Saladita, México
+      <v-spacer />
+      <div>&copy; {{ new Date().getFullYear() }}</div>
+    </v-footer>
   </v-app>
 </template>
-<!-- 
+
 <script>
-export default {}
+export default {
+  computed: {
+    binding() {
+      const binding = {}
+
+      if (this.$vuetify.breakpoint.mdAndUp) binding.column = true
+
+      return binding
+    }
+  }
+}
 </script>
 
 <style scoped>
-.home {
-  height: 100vh;
-  min-height: 100%;
-}
-
 section.content {
-  padding: 1rem;
-}
-
-@media only screen and (min-width: 500px) {
-  section.content {
-    padding: 0;
-  }
+  padding: 0;
 }
 </style>
- -->
 
 <style>
 html {
